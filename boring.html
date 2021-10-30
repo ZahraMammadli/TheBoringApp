@@ -9,20 +9,42 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-
+    <!-- <link rel="stylesheet" href="./asset/css/stylesfront.css" /> -->
     <link rel="stylesheet" href="./asset/css/styles.css" />
     <title>The Boring App</title>
   </head>
   <body>
+    <nav>
+      <div class="nav-wrapper blue-grey darken-3">
+        <a href="#" class="brand-logo">TheBoaringApp</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">AboutUs</a></li>
+          <li><a href="badges.html">Journey</a></li>
+          <li><a href="collapsible.html">ContactUs</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
       <!-- DEMO BUTTONS -->
       
-      <div class="card" id="demoButtonBoring">
+      <!-- <div class="card" id="demoButtonBoring">
         <a class="waves-effect waves-light btn" id="demo-boring">BoringApi</a>
-      </div>
+      </div> -->
       <!-- BORED ACTIVITY DEMO-->
-        <div class="card" id="activity-demo">
+        <div class="card" id="activity-card">
         </div>
+      <!-- div for youtube search button -->
+        <div class="card" id="search-youtube">
+          <button type='button' id="ytSearchButton">Watch Someone Else Do it</button>
+        </div>
+        <!-- div for youtube iframe -->
+        <div id="youtube-video" class="video-container">
+          <iframe 
+          id="video-iframe" 
+          src="" 
+         >
+            </iframe>
+      </div>
       </div>
     </div>
     <!--jquery-->
