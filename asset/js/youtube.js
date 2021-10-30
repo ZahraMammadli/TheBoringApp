@@ -1,7 +1,7 @@
 // Nabil's key: AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas
 // Swapnil's key: AIzaSyDSvqHkiOyrUOr7LTw4D3tczbiBLBsRJR8
 
-// var key = "AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas";
+var key = "AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas";
 
 // the youtube button
 var youtubeButton = document.getElementById("demo-youtube");

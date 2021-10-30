@@ -2,5 +2,5 @@
 
 // On click redirect to options page
 $("#entertainButton").click(function () {
-  window.location.href = "index2.html";
+  window.location.href = "choice.html";
 });
