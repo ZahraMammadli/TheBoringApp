@@ -35,7 +35,7 @@ function displayActivity() {
           "</a><br>" +
           "<iframe src='" +
           activityObject.link +
-          "' width='100%' height='200'></iframe><br>";
+          "' width='100%' height='450'></iframe><br>";
       } else {
         document.getElementById("activity-demo").innerHTML =
           activityObject.activity + "." + "<br>";
