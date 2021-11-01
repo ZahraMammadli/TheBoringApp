@@ -1,5 +1,6 @@
 document.getElementById("search-youtube").style.display = "none";
 document.getElementById("youtube-video").style.display = "none";
+// document.getElementById("loading").style.display = "block";
 console.log("hello world");
 
 //testing out bored API
@@ -24,38 +25,40 @@ console.log("hello world");
 
 // demoButtonBoring.addEventListener("click", displayActivity);
 let boredUrl = "https://www.boredapi.com/api/activity";
-function displayActivity() {
-  fetch(boredUrl).then((response) =>
-    response.json().then((activityObject) => {
-      if (activityObject.link != "") {
-        document.getElementById("activity-card").innerHTML =
-          activityObject.activity +
-          "." +
-          "<br>" +
-          "<a href=" +
-          activityObject.link +
-          " target='_blank'>" +
-          activityObject.link +
-          "</a><br>" +
-          "<iframe src='" +
-          activityObject.link +
-          "' width='100%' height='450'></iframe><br>";
-        console.log(activityObject.activity);
-        var searchTerm = activityObject.activity;
-        console.log(searchTerm + "!");
-        localStorage.setItem("searchterm", JSON.stringify(searchTerm));
-        document.getElementById("search-youtube").style.display = "block";
-      } else {
-        document.getElementById("activity-card").innerHTML =
-          activityObject.activity + "." + "<br>";
-        console.log(activityObject.activity);
-        var searchTerm = activityObject.activity;
-        console.log(searchTerm + "!");
-        localStorage.setItem("searchterm", JSON.stringify(searchTerm));
-        document.getElementById("search-youtube").style.display = "block";
-      }
-    })
-  );
+
+async function displayActivity() {
+  var response = await fetch(boredUrl);
+  var activityObject = await response.json();
+
+  if (activityObject.link != "") {
+    document.getElementById("activity-card").innerHTML = "";
+    document.getElementById("activity-card").innerHTML =
+      activityObject.activity +
+      "." +
+      "<br>" +
+      "<a href=" +
+      activityObject.link +
+      " target='_blank'>" +
+      activityObject.link +
+      "</a><br>" +
+      "<iframe src='" +
+      activityObject.link +
+      "' width='100%' height='450'></iframe><br>";
+    console.log(activityObject.activity);
+    var searchTerm = activityObject.activity;
+    console.log(searchTerm + "!");
+    localStorage.setItem("searchterm", JSON.stringify(searchTerm));
+    document.getElementById("search-youtube").style.display = "block";
+  } else {
+    document.getElementById("activity-card").innerHTML = "";
+    document.getElementById("activity-card").innerHTML =
+      activityObject.activity + "." + "<br>";
+    console.log(activityObject.activity);
+    var searchTerm = activityObject.activity;
+    console.log(searchTerm + "!");
+    localStorage.setItem("searchterm", JSON.stringify(searchTerm));
+    document.getElementById("search-youtube").style.display = "block";
+  }
 }
 
 displayActivity();
