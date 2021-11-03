@@ -1,6 +1,6 @@
 // Nabil's key: AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas
 // Swapnil's key: AIzaSyDSvqHkiOyrUOr7LTw4D3tczbiBLBsRJR8
-// Niko's key: "AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas
+// Niko's key: AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas
 
 var key = "AIzaSyDSvqHkiOyrUOr7LTw4D3tczbiBLBsRJR8";
 
@@ -75,28 +75,30 @@ var searchButton = document.getElementById("demo-search");
 //       ).src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
 //     });
 // }
-let randomWordUrl = "https://random-word-api.herokuapp.com/word?number=2";
+let randomWordUrl = "https://random-word-api.herokuapp.com/word?number=1";
 async function renderVideo() {
   var pullWord = await fetch(randomWordUrl);
-  var searchTerm = await pullWord.json();
-  console.log(searchTerm);
-  document.getElementById("search-terms").innerHTML = searchTerm;
+  var searchTermArray = await pullWord.json();
+  console.log(searchTermArray);
+  document.getElementById("search-terms").innerHTML = searchTermArray;
   // localStorage.setItem("randomSearchTerm", searchTerm);
   //fetch function for a random youtube video
   // var randomSearchTerm = localStorage.getItem("randomSearchTerm");
-  var url =
-    await `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchTerm}&type=video&videoDuration=short&key=${key}`;
-  console.log(url);
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      // this console log allows us to see the video id of the random video displayed
-      // console.log(data.items[0].id.videoId);
-      // add the random video source into the video iframe on the html file
-      document.querySelector(
-        "#video-iframe"
-      ).src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
-    });
+  var randomSearchTerm = "elephant";
+  if (searchTermArray.length > 0) {
+    randomSearchTerm = searchTermArray.join(" and ");
+  }
+  randomSearchTerm = encodeURI(randomSearchTerm);
+  var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${randomSearchTerm}&type=video&videoDuration=short&key=${key}`;
+  // console.log(url);
+  var response = await fetch(url);
+  var data = await response.json();
+  // this console log allows us to see the video id of the random video displayed
+  // console.log(data.items[0].id.videoId);
+  // add the random video source into the video iframe on the html file
+  document.querySelector(
+    "#video-iframe"
+  ).src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
 }
 renderVideo();
 
