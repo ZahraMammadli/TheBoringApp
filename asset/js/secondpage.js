@@ -4,3 +4,7 @@
 $("#entertainButton").click(function () {
   window.location.href = "choice.html";
 });
+
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});
