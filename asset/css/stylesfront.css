@@ -16,6 +16,9 @@ body {
 .container {
   display: none;
 }
+.nav-wrapper {
+  position: fixed;
+}
 
 .mainPage {
   display: flex;
@@ -32,6 +35,7 @@ body {
 #entertainButton {
   display: inline-block;
   vertical-align: bottom;
+  align-items: center;
   width: 150px;
   font-size: large;
   margin-top: 10px;
