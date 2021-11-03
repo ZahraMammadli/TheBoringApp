@@ -9,32 +9,48 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-
     <link rel="stylesheet" href="./asset/css/styles.css" />
     <title>The Boring App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./asset/css/youtube.css" />
   </head>
-  <body>
-    <div class="container">
-      <!-- DEMO BUTTONS -->
-      <div class="card" id="demo-button-yt">
-        <a class="waves-effect waves-light btn" id="demo-youtube">YouTube</a>
-      </div>
 
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper blue-grey darken-3">
+          <a href="./index.html" class="brand-logo">TheBoaringApp</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="about-us.html">AboutUs</a></li>
+            <li><a href="contact-us.html">ContactUs</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
       <!-- Red pill (Random Youtube Video)-->
       <div id="youtube-video" class="video-container">
-          <iframe 
-          id="video-iframe" 
-          src="" 
+        <iframe
+          id="video-iframe"
+          src=""
           width="853"
           height="480"
-          frameborder="0">
-            </iframe>
+          frameborder="0"
+        >
+        </iframe>
       </div>
       <!-- End message (go back to work) -->
       <div id="end-message"></div>
     </div>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./asset/js/youtube.js"></script>
   </body>
 </html>

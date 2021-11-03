@@ -1,0 +1,30 @@
+:root {
+    --backGr: #f7e4cc;
+    --textstyle: "Amatic SC", cursive;
+    --textsize: 1.2em;
+  }
+  * {
+    font-family: var(--textstyle);
+    font-size: large;
+  }
+  
+  body {
+    background-color: var(--backGr);
+    font-size: large;
+  }
+  
+  .mainPage {
+    display: flex;
+    display: grid;
+    display: block;
+    text-align: center;
+    flex: 1 1 65%;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 130px;
+  }
+
+.container {
+    padding-top: 5em;
+}
