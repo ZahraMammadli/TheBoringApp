@@ -1,7 +1,8 @@
 // Nabil's key: AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas
 // Swapnil's key: AIzaSyDSvqHkiOyrUOr7LTw4D3tczbiBLBsRJR8
+// Niko's key: "AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas
 
-var key = "AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas";
+var key = "AIzaSyDSvqHkiOyrUOr7LTw4D3tczbiBLBsRJR8";
 
 // the youtube button
 var youtubeButton = document.getElementById("demo-youtube");
@@ -90,13 +91,14 @@ async function renderVideo() {
     .then((response) => response.json())
     .then((data) => {
       // this console log allows us to see the video id of the random video displayed
-      console.log(data.items[0].id.videoId);
+      // console.log(data.items[0].id.videoId);
       // add the random video source into the video iframe on the html file
       document.querySelector(
         "#video-iframe"
       ).src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
     });
 }
+renderVideo();
 
 // event listener for youtube button
-youtubeButton.addEventListener("click", renderVideo);
+// youtubeButton.addEventListener("click", renderVideo);
