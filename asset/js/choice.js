@@ -9,10 +9,4 @@ $("#blue-pill").click(function () {
 $("#red-pill").click(function () {
   window.location.href = "youtube.html";
 });
-
-// function dummyData() {
-//   localStorage.setItem("bluepill", 2);
-//   localStorage.setItem("redpill", 4);
-// }
-
-// var test = dummyData();
+ 
