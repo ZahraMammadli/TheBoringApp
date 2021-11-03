@@ -1,6 +1,13 @@
-const sample = [
-  { id: "bluepill", value: 10 },
-  { id: "redpill", value: 12 },
+let redpills = localStorage.getItem("redpills");
+redpills = redpills === null ? 0 : parseInt(redpills);
+
+let bluepills = localStorage.getItem("bluepills");
+bluepills = bluepills === null ? 0 : parseInt(bluepills);
+
+
+const pillData = [
+  { id: "bluepill", value: bluepills },
+  { id: "redpill", value: redpills },
 ];
 
 const svg = d3.select("svg");
@@ -17,7 +24,7 @@ const chart = svg
 const xScale = d3
   .scaleBand()
   .range([0, width])
-  .domain(sample.map((s) => s.id))
+  .domain(pillData.map((s) => s.id))
   .padding(0.4);
 
 const yScale = d3.scaleLinear().range([height, 0]).domain([0, 100]);
@@ -40,7 +47,7 @@ chart
   .attr("class", "grid")
   .call(makeYLines().tickSize(-width, 0, 0).tickFormat(""));
 
-const barGroups = chart.selectAll().data(sample).enter().append("g");
+const barGroups = chart.selectAll().data(pillData).enter().append("g");
 
 barGroups
   .append("rect")
