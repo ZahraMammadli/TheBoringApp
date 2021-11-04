@@ -1,7 +1,7 @@
 :root {
   --backGr: #f7e4cc;
   --textstyle: "Amatic SC", cursive;
-  --textsize: 1.2em;
+  --textsize: 1.5em;
 }
 * {
   font-family: var(--textstyle);
@@ -10,7 +10,7 @@
 
 body {
   background-color: var(--backGr);
-  font-size: large;
+  font-size: var(--textsize);
 }
 
 .container {
@@ -30,6 +30,13 @@ body {
   text-align: center;
   flex-direction: column;
   margin-top: 130px;
+}
+p {
+  font-size: var(--textsize);
+}
+
+h5 {
+  margin-left: 10px;
 }
 
 #entertainButton {
@@ -64,20 +71,20 @@ h6 {
 }
 
 #Niko {
-  width: 150px;
-  height: 150px;
+  width: auto;
+  height: auto;
 }
 #Nabil {
-  width: 150px;
-  height: 150px;
+  width: auto;
+  height: auto;
 }
 #Olivier {
-  width: 150px;
-  height: 150px;
+  width: auto;
+  height: auto;
 }
 #Zahra {
-  width: 150px;
-  height: 150px;
+  width: 510px;
+  height: auto;
 }
 
 #ContactUs {

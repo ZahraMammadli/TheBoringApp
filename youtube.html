@@ -17,22 +17,36 @@
       href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./asset/css/youtube.css" />
+    <!-- Navbar responsive -->
+    <nav class="blue-grey darken-3">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">TheBoaringApp</a>
+
+        <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+          <i class="material-icons">menu</i>
+        </a>
+
+        <ul class="right hide-on-med-and-down">
+          <li><a href="about-us.html">AboutUs</a></li>
+          <li><a href="stats.html">Statistics</a></li>
+          <li><a href="contact-us.html">ContactUs</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+      <li><a href="about-us.html">AboutUs</a></li>
+      <li><a href="stats.html">Statistics</a></li>
+      <li><a href="contact-us.html">ContactUs</a></li>
+    </ul>
   </head>
 
   <body>
-    <header>
-      <nav>
-        <div class="nav-wrapper blue-grey darken-3">
-          <a href="./index.html" class="brand-logo">TheBoaringApp</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="about-us.html">AboutUs</a></li>
-            <li><a href="contact-us.html">ContactUs</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
     <div class="container">
       <!-- Red pill (Random Youtube Video)-->
       <div id="youtube-video" class="video-container">
