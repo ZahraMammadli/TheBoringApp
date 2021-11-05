@@ -120,3 +120,8 @@ window.addEventListener(
   },
   false
 );
+
+// Responsivess of the navbar
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});
