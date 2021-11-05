@@ -97,6 +97,26 @@ function searchYoutube() {
         "#video-iframe"
       ).src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
     });
+
+  //update red pill counter in local storage
+  if (localStorage.getItem("redpills") != null) {
+    var redpills = parseInt(localStorage.getItem("redpills")) + 1;
+    localStorage.setItem("redpills", redpills);
+  } else {
+    var redpills = 1;
+    localStorage.setItem("redpills", redpills);
+  }
 }
 
 ytSearchButton.addEventListener("click", searchYoutube);
+
+//update blue pill count if page is refreshed
+window.addEventListener(
+  "unload",
+  function () {
+    var bluepills = parseInt(localStorage.getItem("bluepills"));
+    bluepills = bluepills + 1;
+    localStorage.setItem("bluepills", bluepills);
+  },
+  false
+);

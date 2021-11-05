@@ -90,3 +90,14 @@ fetch(url)
       document.getElementById("youtube-container").appendChild(consolationMsg);
     }
   });
+
+//update red pill counter if page is refreshed
+window.addEventListener(
+  "unload",
+  function () {
+    var redpills = parseInt(localStorage.getItem("redpills"));
+    redpills = redpills + 1;
+    localStorage.setItem("redpills", redpills);
+  },
+  false
+);
