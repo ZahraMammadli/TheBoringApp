@@ -6,6 +6,9 @@
   background-color: #f7e4cc;
 }
 
+h1{
+  transform: translate(10%, 0%);
+}
 div.container {
   height: 10em;
   position: relative;
@@ -30,7 +33,7 @@ div.container {
   position: absolute;
   top: 50%;
   right: 90%;
-  transform: scale(0.8);
+  transform: scale(0.7);
   background-color: rgb(43, 43, 136);
   cursor: pointer;
   border-radius: 45px;
@@ -41,7 +44,7 @@ div.container {
   position: absolute;
   top: 50%;
   left: 90%;
-  transform: scale(0.8);
+  transform: scale(0.7);
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -51,13 +54,15 @@ div.container {
 }
 
 .pill1:hover {
-  transform: scale(1);
+  transform: scale(0.85);
+  transition-duration: 1s;
   box-shadow: 0 15px 16px 0 rgba(17, 0, 255, 0.473),
     0 17px 50px 0 rgba(78, 96, 255, 0.19);
 }
 
 .pill2:hover {
-  transform: scale(1);
+  transform: scale(0.85);
+  transition-duration: 1s;
   box-shadow: 0 15px 16px 0 rgba(187, 21, 21, 0.473),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
@@ -80,11 +85,44 @@ div.container {
 .img_description {
   position: absolute;
   visibility: hidden;
+  transform: scale(1.5);
   opacity: 0;
+  margin-top: 50%;
 }
 
-.img_wrap:hover .img_description {
+.img_wrap:hover #fadeRed {
   visibility: visible;
   opacity: 1;
-  margin-top: 270px;
+  margin-top: 300px;
+  color:rgb(134, 15, 15);
+  animation: fadeIn 1.8s;
+}
+
+.img_wrap:hover #fadeBlue {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 300px;
+  margin-left: 17px;
+  color:rgb(0, 0, 129);
+  animation: fadeIn 1.8s;
+}
+
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.home {
+  position: absolute;
+  color: #2f4a6d;
+  font-size: 20px;
+  margin-left: 48.35%;
+  font-weight: 800;
+  animation: fadeinn 60s;
+}
+
+@keyframes fadeinn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
