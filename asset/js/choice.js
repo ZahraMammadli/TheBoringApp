@@ -23,3 +23,8 @@ $("#red-pill").click(function () {
     localStorage.setItem("redpills", redpills);
   }
 });
+
+// Responsivess of the navbar
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});

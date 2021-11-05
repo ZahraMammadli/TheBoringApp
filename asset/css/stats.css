@@ -1,7 +1,6 @@
 :root {
   --backGr: #f7e4cc;
   --textstyle: "Amatic SC", cursive;
-  --textsize: 1.2em;
 }
 * {
   font-family: var(--textstyle);
@@ -22,6 +21,7 @@ div#container {
   height: 600px;
   margin: auto;
   background-color: #2f4a6d;
+  margin-top: 50px;
 }
 
 svg {

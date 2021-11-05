@@ -1,15 +1,16 @@
+// Retrieving stats from local storage
 let redpills = localStorage.getItem("redpills");
 redpills = redpills === null ? 0 : parseInt(redpills);
 
 let bluepills = localStorage.getItem("bluepills");
 bluepills = bluepills === null ? 0 : parseInt(bluepills);
 
-
 const pillData = [
   { id: "bluepill", value: bluepills },
   { id: "redpill", value: redpills },
 ];
 
+//Building svg with stats using d3
 const svg = d3.select("svg");
 const svgContainer = d3.select("#container");
 
@@ -19,7 +20,8 @@ const height = 600 - 2 * margin;
 
 const chart = svg
   .append("g")
-  .attr("transform", `translate(${margin}, ${margin})`);
+  .attr("transform", `translate(${margin}, ${margin})`)
+  .attr("viewBox", `0 0 300 600`);
 
 const xScale = d3
   .scaleBand()
@@ -28,10 +30,6 @@ const xScale = d3
   .padding(0.4);
 
 const yScale = d3.scaleLinear().range([height, 0]).domain([0, 100]);
-
-// vertical grid lines
-// const makeXLines = () => d3.axisBottom()
-//   .scale(xScale)
 
 const makeYLines = () => d3.axisLeft().scale(yScale);
 
@@ -139,3 +137,8 @@ svg
   .attr("y", 40)
   .attr("text-anchor", "middle")
   .text("Chosen pill");
+
+// Responsivess of the navbar
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});
