@@ -14,8 +14,8 @@ $("#sendBtn").click(function sendMsg(e) {
   // Function to send email
   Email.send({
     SecureToken: "1f96d029-475c-4a1f-850e-8bde99d236cb",
-    To: "theboaringapp@gmail.com",
-    From: email.val(),
+    To: email.val(),
+    From: "theboaringapp@gmail.com",
     Subject: sbj.val(),
     Body: msg.val(),
   }).then((message) => alert(message));
