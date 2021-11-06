@@ -86,7 +86,7 @@ barGroups
 
         let text = "";
         if (divergence > 0) text += "+";
-        text += `${divergence}%`;
+        text += `${divergence}`;
 
         return idx !== i ? text : "";
       });
@@ -111,7 +111,7 @@ barGroups
   .attr("x", (a) => xScale(a.id) + xScale.bandwidth() / 2)
   .attr("y", (a) => yScale(a.value) + 30)
   .attr("text-anchor", "middle")
-  .text((a) => `${a.value}%`);
+  .text((a) => `${a.value}`);
 
 svg
   .append("text")
@@ -120,7 +120,7 @@ svg
   .attr("y", margin / 2.4)
   .attr("transform", "rotate(-90)")
   .attr("text-anchor", "middle")
-  .text("Choose meter (%)");
+  .text("Choose meter");
 
 svg
   .append("text")
