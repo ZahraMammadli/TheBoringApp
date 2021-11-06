@@ -24,6 +24,10 @@ div#container {
   margin-top: 50px;
 }
 
+nav .brand-logo {
+  padding-left: 2rem;
+}
+
 svg {
   width: 100%;
   height: 100%;

@@ -20,6 +20,10 @@ body {
   position: fixed;
 }
 
+nav .brand-logo {
+  padding-left: 2rem;
+}
+
 .mainPage {
   display: flex;
   display: grid;
@@ -84,8 +88,8 @@ h6 {
 }
 #Zahra {
   object-fit: cover;
-  width:512px;
-  height:512px;
+  width: 512px;
+  height: 512px;
   object-position: 90% 10%;
 }
 
