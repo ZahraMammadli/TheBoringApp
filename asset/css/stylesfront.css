@@ -83,12 +83,23 @@ h6 {
   height: auto;
 }
 #Zahra {
-  width: 510px;
-  height: auto;
+  object-fit: cover;
+  width:512px;
+  height:512px;
+  object-position: 90% 10%;
 }
 
 #ContactUs {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.profile-img {
+  border-radius: 50%;
+}
+
+.profile-quote {
+  align-self: center;
+  padding-left: 5vw;
 }
