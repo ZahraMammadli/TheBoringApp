@@ -29,6 +29,10 @@ body {
   padding-top: 5em;
 }
 
+nav .brand-logo {
+  padding-left: 2rem;
+}
+
 #youtube-container h4 {
   color: #e1897d;
   text-align: center;

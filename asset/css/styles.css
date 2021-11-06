@@ -28,6 +28,10 @@ body {
   font-size: 66px;
 }
 
+nav .brand-logo {
+  padding-left: 2rem;
+}
+
 #loading {
   padding: 10px;
   display: flex;
