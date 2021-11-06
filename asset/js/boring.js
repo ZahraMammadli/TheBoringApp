@@ -1,30 +1,9 @@
 document.getElementById("search-youtube").style.display = "none";
 document.getElementById("youtube-video").style.display = "none";
 // document.getElementById("loading").style.display = "block";
-console.log("hello world");
 
-//testing out bored API
-// const activityDemo = $("#acitvity-demo");
-
-// async function displayActivity() {
-//   const retrievedActivity = `http://www.boredapi.com/api/activity`;
-//   const activityDetails = await fetch(`${retrievedActivity}`);
-//   //   return {
-//   //     activity: activity,
-//   //     type: type,
-//   //     participants: pax,
-//   //     price: price,
-//   //     link: link,
-//   //     key: key,
-//   //     accessibility: accessibility,
-//   //   };
-//   console.log(activityDetails);
-// }
-
-//hide the youtube-search div on screen load
-
-// demoButtonBoring.addEventListener("click", displayActivity);
 let boredUrl = "https://www.boredapi.com/api/activity";
+// asyncronous function to pull an activity from boredapi on screen load
 
 async function displayActivity() {
   var response = await fetch(boredUrl);
@@ -56,31 +35,20 @@ async function displayActivity() {
     console.log(activityObject.activity);
     var searchTerm = activityObject.activity;
     console.log(searchTerm + "!");
+    //push activity to local storage for later retrieval
     localStorage.setItem("searchterm", JSON.stringify(searchTerm));
     document.getElementById("search-youtube").style.display = "block";
   }
 }
 
 displayActivity();
-// demoButtonBoring.addEventListener("click", displayActivity);
 
-//push bored activity into youtube search query
-
-// Swapnil's key:
-// var key = "AIzaSyDSvqHkiOyrUOr7LTw4D3tczbiBLBsRJR8";
-
-// Nabil's key:
-// var key = "AIzaSyDocdKUc8vFu4Tv30BXxP8Immc17qgXjas";
-
-// Niko's key:
+// Niko's YouTube API key:
 var key = "AIzaSyDTTzdwAgJf2vNOaAEcDumAALfWRgcnRxQ";
 
-//url from YouTube docs modified for my random term and API key
-// function searchYoutube() {
-//   console.log(searchTerm);
-// }
-
+// function to push boredapi activity into YouTube search on button click
 function searchYoutube() {
+  //pull current activity from local storage
   var searchTerm = encodeURI(localStorage.getItem("searchterm"));
   var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchTerm}&type=video&videoDuration=short&key=${key}`;
   console.log(url);
@@ -92,7 +60,7 @@ function searchYoutube() {
       // this console log allows us to see the video id of the random video displayed
       console.log(data.items[0].id.videoId);
 
-      // add the random video source into the video iframe on the html file
+      // add the returned video into the video iframe on the html file
       document.querySelector(
         "#video-iframe"
       ).src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
